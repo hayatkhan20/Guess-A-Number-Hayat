@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+h1 {
+    color: #333;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    padding: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#results {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#score {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#refreshButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Highlight and blink effect for correct guess message */
+#results.congratulations {
+    animation: highlight-green 1s ease-in-out infinite alternate, blink 1s ease-in-out infinite;
+}
+
+/* Highlight and blink effect for wrong guess message */
+#results.oops {
+    animation: highlight-red 1s ease-in-out infinite alternate, blink 1s ease-in-out infinite;
+}
+
+@keyframes highlight-green {
+    from {
+        background-color: #4caf50;
+        color: #fff;
+    }
+    to {
+        background-color: #f0f0f0;
+        color: #333;
+    }
+}
+
+@keyframes highlight-red {
+    from {
+        background-color: #ff5454;
+        color: #fff;
+    }
+    to {
+        background-color: #f0f0f0;
+        color: #333;
+    }
+}
+
+@keyframes blink {
+    from, to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
